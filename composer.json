@@ -4,7 +4,7 @@
   "description": "Embed Google Street View using a Geolocation widget and formatter.",
   "keywords": ["Drupal", "fields"],
   "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/geolocation_street_view",
+  "homepage": "https://www.drupal.org/sandbox/dietrich/2857938",
   "minimum-stability": "dev",
   "authors": [
     {
@@ -13,8 +13,8 @@
     }
   ],
   "support": {
-    "issues": "https://www.drupal.org/project/issues/geolocation_street_view",
-    "source": "http://cgit.drupalcode.org/geolocation_street_view"
+    "issues": "https://www.drupal.org/project/issues/2857938",
+    "source": "http://cgit.drupalcode.org/sandbox-dietrich-2857938"
   },
   "require": { }
 }

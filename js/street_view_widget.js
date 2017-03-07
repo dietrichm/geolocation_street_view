@@ -45,7 +45,7 @@
         // Get the map container.
         /** @type {jQuery} */
         var mapWrapper = $('#' + mapId, context).first();
-        if (mapWrapper.length && !mapWrapper.hasClass('geolocation-street-view-processed')) {
+        if (mapWrapper.length && typeof map.googleMap !== 'undefined' && !mapWrapper.hasClass('geolocation-street-view-processed')) {
           // Street View.
           var panorama = map.googleMap.getStreetView();
 

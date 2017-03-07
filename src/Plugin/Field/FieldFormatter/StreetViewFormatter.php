@@ -20,18 +20,27 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class StreetViewFormatter extends FormatterBase {
 
-  use GoogleMapsDisplayTrait;
+  use GoogleMapsDisplayTrait {
+    getGoogleMapDefaultSettings as originalGoogleMapDefaultSettings;
+  }
 
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
-    $settings = parent::defaultSettings() + self::getGoogleMapDefaultSettings();
+  public static function getGoogleMapDefaultSettings() {
+    $settings = self::originalGoogleMapDefaultSettings();
     $settings['google_map_settings'] += [
       'addressControl' => TRUE,
       'enableCloseButton' => FALSE,
     ];
     return $settings;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings() {
+    return parent::defaultSettings() + self::getGoogleMapDefaultSettings();
   }
 
   /**
@@ -82,7 +91,6 @@ class StreetViewFormatter extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
     $google_maps_url = $this->getGoogleMapsApiUrl();
-    // @TODO: doesn't contain above two new options.
     $map_settings = $this->getGoogleMapsSettings($this->getSettings());
 
     foreach ($items as $delta => $item) {

@@ -28,7 +28,7 @@ class StreetViewWidget extends GeolocationGooglegeocoderWidget {
 
     foreach (['heading', 'pitch', 'zoom'] as $key) {
       // Saved value.
-      $value = isset($items[$delta]->data['google_street_view_pov'][$key]) ? $items[$delta]->data['google_street_view_pov'][$key] : NULL;
+      $value = isset($items[$delta]->data['google_street_view_pov'][$key]) ? (float) $items[$delta]->data['google_street_view_pov'][$key] : NULL;
 
       // Hidden Street View POV field.
       $element[$key] = [

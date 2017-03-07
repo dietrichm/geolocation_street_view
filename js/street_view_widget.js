@@ -58,9 +58,9 @@
           if (!isNaN(parseFloat(heading)) && !isNaN(parseFloat(pitch)) && !isNaN(parseFloat(zoom))) {
             panorama.setPosition(map.googleMap.getCenter());
             panorama.setPov({
-              heading: parseFloat('map-heading'),
-              pitch: parseFloat('map-pitch'),
-              zoom: parseFloat('map-zoom')
+              heading: parseFloat(heading),
+              pitch: parseFloat(pitch),
+              zoom: parseFloat(zoom)
             });
             panorama.setVisible(true);
           }

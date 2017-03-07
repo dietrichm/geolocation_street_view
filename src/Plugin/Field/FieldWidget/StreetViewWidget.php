@@ -41,6 +41,8 @@ class StreetViewWidget extends GeolocationGooglegeocoderWidget {
       $element['map_canvas']['#attached']['drupalSettings']['geolocation']['widgetMaps'][$canvas_id][$key] = $value;
     }
 
+    $element['map_canvas']['#attached']['library'] = ['geolocation_street_view/widget.street_view'];
+
     return $element;
   }
 

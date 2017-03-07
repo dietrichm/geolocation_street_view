@@ -82,10 +82,11 @@ class StreetViewFormatter extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
     $google_maps_url = $this->getGoogleMapsApiUrl();
+    // @TODO: doesn't contain above two new options.
     $map_settings = $this->getGoogleMapsSettings($this->getSettings());
 
     foreach ($items as $delta => $item) {
-      $unique_id = uniqid("map-canvas-");
+      $unique_id = uniqid('map-canvas-');
 
       // Render Street View formatter.
       $elements[$delta] = [
@@ -94,13 +95,11 @@ class StreetViewFormatter extends FormatterBase {
         '#latitude' => $item->lat,
         '#longitude' => $item->lng,
         '#attached' => [
-          'library' => ['geolocation/geolocation.formatter.googlemap'],
+          'library' => ['geolocation_street_view/formatter.street_view'],
           'drupalSettings' => [
             'geolocation' => [
               'google_map_url' => $google_maps_url,
-              'maps' => [
-                $unique_id => ['settings' => $map_settings],
-              ],
+              'maps' => [$unique_id => ['settings' => $map_settings]],
             ],
           ],
         ],

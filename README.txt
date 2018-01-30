@@ -9,13 +9,13 @@ REQUIREMENTS
 
 This module requires the following modules:
 
- * Geolocation Field (https://www.drupal.org/project/geolocation)
+ * Geolocation Field 8.x-1.x (https://www.drupal.org/project/geolocation)
 
 INSTALLATION
 ------------
 
 Install as you would normally install a contributed Drupal module. See
-https://www.drupal.org/documentation/install/modules-themes/modules-8.
+https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules.
 
 CONFIGURATION
 -------------
@@ -41,5 +41,5 @@ MAINTAINERS
 Current maintainers:
  * Dietrich Moerman (dietr_ch) - https://www.drupal.org/u/dietr_ch
 
-This project has been sponsored by:
+Initial development time was provided by:
  * EntityOne - https://entityone.be/

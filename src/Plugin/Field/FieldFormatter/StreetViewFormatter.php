@@ -46,6 +46,16 @@ class StreetViewFormatter extends FormatterBase {
   /**
    * {@inheritdoc}
    */
+  protected function mergeDefaults() {
+    parent::mergeDefaults();
+    // Merge the options in the Google Map settings as well.
+    $defaults = static::defaultSettings();
+    $this->settings['google_map_settings'] += $defaults['google_map_settings'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $settings = $this->getSettings();
     $form_prefix = 'fields][' . $this->fieldDefinition->getName() . '][settings_edit_form][settings][';

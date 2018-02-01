@@ -54,7 +54,7 @@
           });
 
           // Open Street View when POV is given.
-          if (mapWrapper.data('map-heading') && mapWrapper.data('map-pitch') && mapWrapper.data('map-zoom')) {
+          if (mapWrapper.is('[data-map-heading][data-map-pitch][data-map-zoom]')) {
             panorama.setPosition(map.googleMap.getCenter());
             panorama.setPov({
               heading: Number(mapWrapper.data('map-heading')),

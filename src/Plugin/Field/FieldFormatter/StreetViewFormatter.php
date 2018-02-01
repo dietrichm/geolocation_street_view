@@ -60,26 +60,26 @@ class StreetViewFormatter extends FormatterBase {
     $settings = $this->getSettings();
     $form_prefix = 'fields][' . $this->fieldDefinition->getName() . '][settings_edit_form][settings][';
 
-    $form += $this->getGoogleMapsSettingsForm($settings, $form_prefix);
+    $element = $this->getGoogleMapsSettingsForm($settings, $form_prefix);
 
-    $form['google_map_settings']['street_view_settings'] = [
+    $element['google_map_settings']['street_view_settings'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Street View'),
     ];
-    $form['google_map_settings']['addressControl'] = [
+    $element['google_map_settings']['addressControl'] = [
       '#group' => $form_prefix . 'google_map_settings][street_view_settings',
       '#type' => 'checkbox',
       '#title' => $this->t('Enable a textual overlay with the address of the location.'),
       '#default_value' => $settings['google_map_settings']['addressControl'],
     ];
-    $form['google_map_settings']['enableCloseButton'] = [
+    $element['google_map_settings']['enableCloseButton'] = [
       '#group' => $form_prefix . 'google_map_settings][street_view_settings',
       '#type' => 'checkbox',
       '#title' => $this->t('Allow the user to close Street View and return to the map.'),
       '#default_value' => $settings['google_map_settings']['enableCloseButton'],
     ];
 
-    return $form;
+    return $element;
   }
 
   /**

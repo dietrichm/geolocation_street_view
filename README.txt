@@ -29,11 +29,12 @@ CONFIGURATION
  * Configure the POV and save the contents.
  * Display the content. The field will show the configured Street View POV.
 
-KNOWN BUGS
-----------
+KNOWN ISSUES
+------------
 
  * You can configure a default location for a field, but not a default Street
-   View POV. An error is displayed upon saving.
+   View POV. An error is displayed upon saving. This is caused by Geolocation
+   Field issue #2892320, which is not fixed in a released version.
 
 MAINTAINERS
 -----------
